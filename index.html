@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+        
+    <form class="">
+      <!-- 1 -->
+      <div class="form-group">
+          <label for="tipo-documento">1.	Tipo de documento: *</label> 
+      <div>
+          <select id="tipo-documento" name="tipo-documento" aria-describedby="tipo-documentoHelpBlock" required="required" class="custom-select">
+              <option value="1">Tarjeta de identidad.</option>
+              <option value="2">Cédula de ciudadanía.</option>
+              <option value="3">Cédula de extranjería.</option>
+          </select> 
+          <span id="tipo-documentoHelpBlock" class="form-text text-muted">Ingrese aquí su tipo de documento</span>
+      </div>
+      </div>
+      <!-- 2 -->
+      <div class="form-group">
+          <label for="documento">2.	Número de documento: *</label> 
+          <input id="documento" name="documento" placeholder="Digite aquí el número de su documento" type="text" aria-describedby="documentoHelpBlock" class="form-control" spellcheck="false" data-ms-editor="true"> 
+          <span id="documentoHelpBlock" class="form-text text-muted">Digite solo números</span>
+      </div>
+      <!-- 3 -->
+      <div class="form-group">
+          <label for="sexo">3.	Sexo: *</label> 
+          <div>
+              <select id="sexo" name="sexo" aria-describedby="sexoHelpBlock" required="required" class="custom-select">
+                  <option value="m">Masculino</option>
+                  <option value="f">Femenino</option>
+              </select> 
+              <span id="sexoHelpBlock" class="form-text text-muted">Seleccione una opción</span>
+          </div>
+      </div>
+      <!-- 4 -->
+      <div class="form-group">
+          <label for="apellido">4.	Apellido completo: *</label> 
+          <input id="apellido" name="apellido" placeholder="Digite aquí sus apellidos" type="text" aria-describedby="apellidoHelpBlock" class="form-control" spellcheck="false" data-ms-editor="true"> 
+          <span id="apellidoHelpBlock" class="form-text text-muted">En mayúscula y sin tildes</span>
+      </div>
+      <!-- 5 -->
+      <div class="form-group">
+          <label for="nombre">5.	Nombre completo: *</label> 
+          <input id="nombre" name="nombre" placeholder="Digite aquí su nombre" type="text" aria-describedby="nombreHelpBlock" class="form-control" spellcheck="false" data-ms-editor="true"> 
+          <span id="nombreHelpBlock" class="form-text text-muted">En mayúscula y sin tildes</span>
+      </div>
+      <!-- 6 -->
+      <div class="form-group">
+          <label>6.	Tipo de beneficiario: *</label> 
+          <div>
+              <div class="custom-control custom-radio custom-control-inline">
+                  <input name="radio" id="radio_0" type="radio" class="custom-control-input" value="estudiante"> 
+                  <label for="radio_0" class="custom-control-label">Estudiante</label>
+              </div>
+          </div>
+      </div>
+      <!-- 7 -->
+      <script src="mostrar.js"></script>
+      <div class="form-group">
+        <label>7.	Sede / Regional: *</label> 
+        <div>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input name="sede" id="sede_0" type="radio" class="custom-control-input" value="1" aria-describedby="sedeHelpBlock" onchange="mostrar(this.value);"> 
+            <label for="sede_0" class="custom-control-label">Bucaramanga</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input name="sede" id="sede_1" type="radio" class="custom-control-input" value="2" aria-describedby="sedeHelpBlock" onchange="mostrar(this.value);"> 
+            <label for="sede_1" class="custom-control-label">Barrancabermeja</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input name="sede" id="sede_2" type="radio" class="custom-control-input" value="3" aria-describedby="sedeHelpBlock" onchange="mostrar(this.value);"> 
+            <label for="sede_2" class="custom-control-label">Piedecuesta</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input name="sede" id="sede_3" type="radio" class="custom-control-input" value="4" aria-describedby="sedeHelpBlock" onchange="mostrar(this.value);"> 
+            <label for="sede_3" class="custom-control-label">Vélez</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input name="sede" id="sede_4" type="radio" class="custom-control-input" value="5" aria-describedby="sedeHelpBlock" onchange="mostrar(this.value);"> 
+            <label for="sede_4" class="custom-control-label">Programas virtuales</label>
+          </div> 
+          <span id="sedeHelpBlock" class="form-text text-muted">Seleccione a que se dé o regional pertenece para desplegar los programa</span>
+        </div>
+      </div>
+      <!-- 8 -->
+      <div class="form-group" id="bucaramanga" style="display:none;">
+        <label for="programa-bucaramanga">8.	Programa - Sede Bucaramanga: *</label> 
+        <div>
+          <select id="programa-bucaramanga" name="programa-bucaramanga" aria-describedby="programa-bucaramangaHelpBlock" required="required" class="custom-select">
+            <option value="1">Tecnología en Manejo de la Información Contable - (Antigua Contabilidad Financiera).</option>
+            <option value="2">Tecnología en Gestión de la Moda.</option>
+            <option value="3">Tecnología en Gestión Bancaria y Financiera.</option>
+            <option value="4">Tecnología en Mercadeo y Gestión Comercial.</option>
+            <option value="5">Tecnología en Gestión Empresarial.</option>
+            <option value="6">Tecnología en Gestión Agroindustrial.</option>
+            <option value="7">Tecnología en Entrenamiento Deportivo.</option>
+            <option value="8">Tecnología en Operación y Mantenimiento Electromecánico.</option>
+            <option value="9">Tecnología en Levantamientos Topográficos.</option>
+            <option value="10">Tecnología en Manejo de Recursos Ambientales.</option>
+            <option value="11">Tecnología en Electricidad Industrial.</option>
+            <option value="12">Tecnología en Implementación de Sistemas Electrónicos Industriales.</option>
+            <option value="13">Tecnología en Gestión de Sistemas de Telecomunicaciones.</option>
+            <option value="14">Tecnología en Desarrollo de Sistemas Informáticos.</option>
+            <option value="15">Tecnología en Producción Industrial.</option>
+            <option value="16">Administración de Empresas.</option>
+            <option value="17">Profesional en Actividad Física y Deporte.</option>
+            <option value="18">Profesional en Diseño de Moda.</option>
+            <option value="19">Profesional en Marketing y Negocios Internacionales.</option>
+            <option value="20">Contaduría Pública.</option>
+            <option value="21">Ingeniería de Telecomunicaciones.</option>
+            <option value="22">Ingeniería Electromecánica.</option>
+            <option value="23">Ingeniería Ambiental.</option>
+            <option value="24">Ingeniería Industrial.</option>
+            <option value="25">Ingeniería Electrónica.</option>
+            <option value="26">Ingeniería Eléctrica.</option>
+            <option value="27">Ingeniería de Sistemas.</option>
+            <option value="28">Ingeniería en Topografía.</option>
+            <option value="29">Tecnología en Estudios Geotécnicos.</option>
+            <option value="30">Tecnología en Manejo de Petróleo y Gas en Superficie.</option>
+            <option value="31">Tecnología en Turismo Sostenible.</option>
+            <option value="32">Profesional en Administración Financiera.</option>
+          </select> 
+          <span id="programa-bucaramangaHelpBlock" class="form-text text-muted">Seleccione una</span>
+        </div>
+      </div>
+      <!-- 8 -->
+      <div class="form-group" id="barrancabermeja" style="display:none;">
+        <label for="programa-barrancabermeja">8.	Programa - Regional Barrancabermeja: *</label> 
+        <div>
+          <select id="programa-barrancabermeja" name="programa-barrancabermeja" aria-describedby="programa-barrancabermejaHelpBlock" required="required" class="custom-select">
+            <option value="1">Tecnología en Contabilidad Financiera.</option>
+            <option value="2">Tecnología en Gestión Empresarial.</option>
+            <option value="3">Técnico Profesional en Instalación de Redes Eléctricas.</option>
+            <option value="4">Contaduría Pública.</option>
+            <option value="5">Administración de Empresas.</option>
+            <option value="6">Tecnología en Operación y Mantenimiento Electromecánico.</option>
+            <option value="7">Ingeniería Electromecánica.</option>
+          </select> 
+          <span id="programa-barrancabermejaHelpBlock" class="form-text text-muted">Seleccione una</span>
+        </div>
+      </div>
+      <!-- 8 -->
+      <div class="form-group" id="velez" style="display:none;">
+        <label for="programa-velez">8.	Programa - Regional Vélez: *</label> 
+        <div>
+          <select id="programa-velez" name="programa-velez" aria-describedby="programa-velezHelpBlock" required="required" class="custom-select">
+            <option value="1">Tecnología en Gestión Empresarial.</option>
+            <option value="2">Tecnología en Contabilidad Financiera.</option>
+            <option value="3">Tecnología en Gestión Empresarial.</option>
+            <option value="4">Tecnología en Electronica Industrial.</option>
+          </select> 
+          <span id="programa-velezHelpBlock" class="form-text text-muted">Seleccione una</span>
+        </div>
+      </div>
+      <!-- 8 -->
+      <div class="form-group" id="piedecuesta" style="display:none;">
+        <label for="programa-piedecuesta">8.	Programa - Regional Piedecuesta: *</label> 
+        <div>
+          <select id="programa-piedecuesta" name="programa-piedecuesta" aria-describedby="programa-piedecuestaHelpBlock" required="required" class="custom-select">
+            <option value="1">Tecnología en Contabilidad Financiera.</option>
+            <option value="2">Tecnología en Recursos Ambientales.</option>
+            <option value="3">Tecnología en Gestión Empresarial.</option>
+            <option value="4">Bienestar Institucional.</option>
+          </select> 
+          <span id="programa-piedecuestaHelpBlock" class="form-text text-muted">Seleccione una</span>
+        </div>
+      </div>
+      <!-- 8 -->
+      <div class="form-group" id="virtual" style="display:none;">
+        <label for="programa-virtual">8.	Programas virtuales: *</label> 
+        <div>
+          <select id="programa-virtual" name="programa-virtual" aria-describedby="programa-virtualHelpBlock" required="required" class="custom-select">
+            <option value="1">Tecnología en Contabilidad Financiera.</option>
+            <option value="2">Tecnología en Gestión Empresarial.</option>
+            <option value="3">Tecnología en Gestión Comercial.</option>
+            <option value="4">Contaduría Pública.</option>
+            <option value="6">Profesional en Mercadeo.</option>
+            <option value="7">Profesional en Administración de Empresas.</option>
+          </select> 
+          <span id="programa-virtualHelpBlock" class="form-text text-muted">Seleccione una</span>
+        </div>
+      </div>
+      <!-- 9 -->
+      <div class="form-group">
+        <label for="docente">9.	Docente - Sede Bucaramanga</label> 
+        <div>
+          <select id="docente" name="docente" aria-describedby="docenteHelpBlock" required="required" class="custom-select">
+            <option value="1">Olmer Aceros.</option>
+            <option value="2">Julián Bahamon.</option>
+            <option value="3">Ramiro Dugarte.</option>
+            <option value="4">Édinson Jaimes.</option>
+            <option value="5">Diego Leal.</option>
+            <option value="6">Juan Carlos Libreros.</option>
+            <option value="7">Carlos Palomino.</option>
+            <option value="8">Bryan Calvete.</option>
+            <option value="9">Héctor Roa.</option>
+            <option value="10">Yesenia Suárez.</option>
+            <option value="11">Juan Carlos Villareal.</option>
+          </select> 
+          <span id="docenteHelpBlock" class="form-text text-muted">Seleccione uno de los docentes disponibles</span>
+        </div>
+      </div>
+      <!-- 10 -->
+      <div class="form-group">
+        <label for="eps">11.	EPS a la cual pertenece (en mayúscula y sin tildes): *</label> 
+        <input id="eps" name="eps" placeholder="Ingrese aquí su EPS" type="text" aria-describedby="epsHelpBlock" class="form-control" spellcheck="false" data-ms-editor="true"> 
+        <span id="epsHelpBlock" class="form-text text-muted">digite todo en mayúsculas y sin tildes.</span>
+      </div>
+      <!-- 11 -->
+      <div class="form-group">
+        <label>11.	¿En la actualidad usted presenta alguna de estas patologías de salud? Si es así, deberá adjuntar el soporte de la restricción médica expedido por su EPS. *</label> 
+        <div>
+          <div class="custom-controls-stacked">
+            <div class="custom-control custom-checkbox">
+              <input name="patologias" id="patologias_0" type="checkbox" class="custom-control-input" value="1"> 
+              <label for="patologias_0" class="custom-control-label">Hipertensión arterial o enfermedades cardiovasculares, como: soplos cardíacos diagnosticados médicamente, trastornos del ritmo cardíaco en reposo o durante el ejercicio, tensión arterial elevada, falla cardíaca, entre otras; o ha manifestado en el último mes dolor en el pecho estando en reposo o haciendo ejercicio.</label>
+            </div>
+          </div>
+          <div class="custom-controls-stacked">
+            <div class="custom-control custom-checkbox">
+              <input name="patologias" id="patologias_1" type="checkbox" class="custom-control-input" value="2"> 
+              <label for="patologias_1" class="custom-control-label">rastornos metabólicos, como: anemia, diabetes mellitus, problemas de tiroides, colesterol y/o     triglicéridos elevados, entre otras; o ha manifestado últimamente mareos o episodios de vértigo que le hayan producido desvanecimientos o pérdidas de la conciencia.</label>
+            </div>
+          </div>
+          <div class="custom-controls-stacked">
+            <div class="custom-control custom-checkbox">
+              <input name="patologias" id="patologias_2" type="checkbox" class="custom-control-input" value="3" checked="checked"> 
+              <label for="patologias_2" class="custom-control-label">Enfermedades de los músculos, huesos y articulaciones, como: artritis reumatoide juvenil,     enfermedades óseas y/o articulares, congénitas o secundarias a traumatismos, esguinces, luxaciones, fracturas, desgarros musculares o secuelas que le limiten la práctica de ejercicio físico.</label>
+            </div>
+          </div>
+          <div class="custom-controls-stacked">
+            <div class="custom-control custom-checkbox">
+              <input name="patologias" id="patologias_3" type="checkbox" class="custom-control-input" value="4"> 
+              <label for="patologias_3" class="custom-control-label">Enfermedades neuromusculares, como: miastenia gravis, distrofia muscular, neuropatías, esclerosis     lateral amiotrófica, entre otras; o ha presentado pérdida del balance o equilibrio al realizar ejercicio físico.</label>
+            </div>
+          </div>
+          <div class="custom-controls-stacked">
+            <div class="custom-control custom-checkbox">
+              <input name="patologias" id="patologias_4" type="checkbox" class="custom-control-input" value="5"> 
+              <label for="patologias_4" class="custom-control-label">Enfermedades respiratorias, como: asma bronquial, bronquitis crónica, enfisema, enfermedad     fibroquística pulmonar, EPOC, entre otras; o cualquier tipo de dificultad respiratoria que le limite la realización de ejercicio físico.</label>
+            </div>
+          </div>
+          <div class="custom-controls-stacked">
+            <div class="custom-control custom-checkbox">
+              <input name="patologias" id="patologias_5" type="checkbox" class="custom-control-input" value="6"> 
+              <label for="patologias_5" class="custom-control-label">Embarazo en condiciones normales o de alto riesgo.</label>
+            </div>
+          </div>
+          <div class="custom-controls-stacked">
+            <div class="custom-control custom-checkbox">
+              <input name="patologias" id="patologias_6" type="checkbox" class="custom-control-input" value="7"> 
+              <label for="patologias_6" class="custom-control-label">Otra/s.</label>
+            </div>
+          </div>
+          <div class="custom-controls-stacked">
+            <div class="custom-control custom-checkbox">
+              <input name="patologias" id="patologias_7" type="checkbox" class="custom-control-input" value="8"> 
+              <label for="patologias_7" class="custom-control-label">Ninguna.</label>
+            </div>
+          </div>
+        </div>
+      </div> 
+      <!-- 12 -->
+      <div class="form-group">
+        <label for="archivo">12.  Cargar el documento que acredite la restricción medica para la realización de actividad física, debidamente firmada por el medico de la EPS*</label> 
+        <div class="input-group">
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" id="inputGroupFile04">
+            <label class="custom-file-label" for="inputGroupFile04">Cargar archivo</label>
+          </div>
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button">Enviar</button>
+          </div>
+        <span id="archivoHelpBlock" class="form-text text-muted">Límite de número de archivos:1 Límite de tamaño del archivo individual: 100MB Tipos de archivo permitidos: PDF</span>
+      </div> 
+      <!-- 13 -->
+      <div class="form-group">
+        <label for="celular">13.	Número de celular: *</label> 
+        <input id="celular" name="celular" placeholder="Digite aquí su número de celular" type="text" class="form-control" spellcheck="false" data-ms-editor="true" aria-describedby="celularHelpBlock"> 
+        <span id="celularHelpBlock" class="form-text text-muted">Solo números sin espacios y ni ningún otro carácter</span>
+      </div> 
+      
+      <div class="form-group">
+        <button name="submit" type="submit" class="btn btn-primary">Completar tamizaje</button>
+      </div>
+
+    </form>
+  </div>
+</body>
+</html>
